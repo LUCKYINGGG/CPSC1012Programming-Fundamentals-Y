@@ -1,15 +1,15 @@
 ﻿// Decision Demos
 
 // Demo-1 - If, If-Else, and If-Else-If Demo
-Demo1();
+// Demo1();
 // Demo-2 - If-Else: Pollution Level
-//Demo2();
+// Demo2();
 // Demo-3 - Boolean Operands
-//Demo3();
+// Demo3();
 // Demo-4 - If-Else with Boolean: Student Pass or Fail
-//Demo4();
+// Demo4();
 // Demo-5 - If-Else-If: Storm Level
-//Demo5();
+Demo5();
 // Demo-6 - If: Window Area Calculator
 //Demo6();
 // Demo-7 - If, If-Else: Leap Year
@@ -34,6 +34,7 @@ void Demo1()
   if (myDouble < 3.0)
     Console.WriteLine($"The number is < 3");
 
+  // input 3, output "The number is < 3", because the expression is false, no matter what is in "else", it outputs else statement(catch hole).
   if (myDouble > 3.0)
     Console.WriteLine($"The number is > 3");
   else
@@ -50,6 +51,7 @@ void Demo1()
 void Demo2()
 {
   const double CUTOFF = 50.0;
+  // Quick declaration for same data.
   double level1,
          level2,
          level3,
@@ -130,6 +132,8 @@ void Demo5()
     Console.WriteLine($"STORM LEVEL: HURRICANE --- Category 4");
   else if (speed > 155)
     Console.WriteLine($"STORM LEVEL: HURRICANE --- Category 5");
+  else
+    Console.WriteLine($"No STORM AT ALL.");
 }
 
 void Demo6()

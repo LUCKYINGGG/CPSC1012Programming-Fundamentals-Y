@@ -1,7 +1,9 @@
 ﻿// Decision Demos
 
 // Demo-1 - If, If-Else, and If-Else-If Demo
+
 // Demo1();
+
 // Demo-2 - If-Else: Pollution Level
 // Demo2();
 // Demo-3 - Boolean Operands
@@ -77,14 +79,16 @@ void Demo3()
   int num = int.Parse(Console.ReadLine());
   // Display message if number is divisible by 2 and 3.
   // The AND operator
-  if (num % 2 == 0 && num % 3 == 0)
+  if ((num % 2 == 0) && (num % 3 == 0))
   {
-    Console.WriteLine($"{num} is divisible by 2 and 3.");
+    Console.WriteLine($"{num} is divisible by 2 and 3 with AND operator.");
+    Console.WriteLine($"Man this AND is fun");
   }
   // The OR operator
   if (num % 2 == 0 || num % 3 == 0)
   {
-    Console.WriteLine($"{num} is divisible by 2 OR 3.");
+    Console.WriteLine($"{num} is divisible by 2 OR 3 with OR operator.");
+    Console.WriteLine($"Man this OR is fun");
   }
   // The EXCLUSIVE OR operator is very rarely used.
   if (num % 2 == 0 ^ num % 3 == 0)
@@ -112,6 +116,11 @@ void Demo4()
   double advancedScore = double.Parse(Console.ReadLine());
   double advWeightVal = advancedWeight * (advancedScore / 100);
   double weightTotal = exWeightVal + quizWeightVal + coreWeightVal + advWeightVal;
+  Console.WriteLine($"\nExercise Score: {exerciseScore}");
+  Console.WriteLine($"Quiz Score: {quizScore}");
+  Console.WriteLine($"Core Score: {coreScore}");
+  Console.WriteLine($"Advanced Core Score: {advancedScore}");
+  Console.WriteLine($"Overall Weighted Average: {weightTotal}");
   if (weightTotal >= 50 && (exerciseScore >= 50) && (quizScore >= 50) && (coreScore >= 50))
     Console.WriteLine("Student has passed!");
   else
@@ -120,7 +129,7 @@ void Demo4()
 
 void Demo5()
 {
-  Console.Write("Enter Wind speed in mph as an integer: ");
+  Console.Write("Enter Wind speed in mph as an integer between 70 and 200: ");
   int speed = int.Parse(Console.ReadLine());
   if (speed >= 74 && speed <= 95)
     Console.WriteLine($"STORM LEVEL: HURRICANE --- Category 1");
@@ -134,6 +143,7 @@ void Demo5()
     Console.WriteLine($"STORM LEVEL: HURRICANE --- Category 5");
   else
     Console.WriteLine($"No STORM AT ALL.");
+
 }
 
 void Demo6()

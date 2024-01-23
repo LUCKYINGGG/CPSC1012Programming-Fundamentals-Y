@@ -36,6 +36,7 @@ void Demo1()
     Console.WriteLine($"The number is > 4");
     Console.WriteLine("Hey man");
   }
+  // If expression is true, these 2 lines of statements will show. 
   if (myDouble < 3.0)
     Console.WriteLine($"The number is < 3");
   Console.WriteLine("Hey something is up");

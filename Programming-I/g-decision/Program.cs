@@ -16,11 +16,13 @@
 //Demo6();
 // Demo-7 - If, If-Else: Leap Year2024
 //Demo7();
+//Demo7();
 // Demo-8 - If-Else-If: Student Grade
 //Demo8();
 // Demo-9 - If-Else-If compared with equivalent Switch-Case
 //Demo9();
 // Demo-10 - Switch-Case: Pet Food
+Demo10();
 Demo10();
 // Demo-11 - Switch-Case: All Provinces Sales Tax Calculator
 //Demo11();
@@ -250,7 +252,10 @@ void Demo9()
   int num1 = int.Parse(Console.ReadLine());
 
   if (num1 == 1)
+  {
     Console.WriteLine("One");
+    Console.WriteLine("hey this is fun");
+  }
   else if (num1 == 2)
     Console.WriteLine("Two");
   else if (num1 == 3)
@@ -262,10 +267,13 @@ void Demo9()
   // Determine the number entered.
   switch (num1)
   {
-    case int num when num == 1:
+    case 1:
+    {
       Console.WriteLine("One One");
       //Break out the switch statement, break after the case statement has done, will not carry out case 2 and forward.
+      Console.WriteLine("hey this is fun");
       break;
+    }
 
     case 2:
       Console.WriteLine("Two Two");
@@ -286,20 +294,9 @@ void Demo10()
   // Prompt the user for a grade of pet food.
   Console.WriteLine("Our pet food is available in three grades.");
   Console.WriteLine("A, B, and C. Which do you want pricing for? ");
-  //char foodGrade = char.Parse(Console.Read()); This cannot be compiled if the case use double quote. Double quote is string, even if the content is only one charc.
-  //string foodGrade = Console.ReadLine()!.ToUpper();
-  Console.WriteLine("Please enter a char");
-  char foodGradeChar = char.Parse(Console.ReadLine());
   // C# use single quote for char, double char for string.
-  switch (foodGradeChar)
-  {
-    case 'A':
-      Console.WriteLine(foodGradeChar);
-      break;
-    default:
-      Console.WriteLine("Hey");
-      break;
-  }
+  //char foodGrade = char.Parse(Console.Read());This cannot be compiled if the case use double quote. Double quote is string, even if the content is only one charc.
+  string foodGrade = Console.ReadLine()!.ToUpper();
   switch (foodGrade)
   {
     case "A":
@@ -313,6 +310,21 @@ void Demo10()
       break;
     default:
       Console.WriteLine("Invalid Choice.");
+      break;
+  }
+
+  Console.WriteLine("\nPlease enter a char");
+  char foodGradeChar = char.Parse(Console.ReadLine().ToUpper());
+  switch (foodGradeChar)
+  {
+    case 'A':
+      Console.WriteLine(foodGradeChar);
+      break;
+    case 'a':
+      Console.WriteLine(foodGradeChar);
+      break;
+    default:
+      Console.WriteLine("Hey");
       break;
   }
 }

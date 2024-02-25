@@ -1,17 +1,53 @@
 ﻿// Arrays Demos
 
 // Demo-1-Arrays-Simple-Stormy
-Demo1();
 // Demo-2-Arrays with methods ave, min, max, sort
-//Demo2();
 // Demo-3-Arrays vs Lists
-//Demo3();
 
+bool goAgain = true;
+while (goAgain)
+{
+  try
+  {
+    DisplayMainMenu();
+    string mainMenuChoice = Prompt("\nEnter a Main Menu Choice: ");
+    if (mainMenuChoice == "D")
+      Demo1();
+    if (mainMenuChoice == "E")
+      Demo2();
+    if (mainMenuChoice == "Q")
+    {
+      goAgain = false;
+      throw new Exception("Bye, hope to see you again soon.");
+    }
+  }
+  catch (Exception ex)
+  {
+    Console.WriteLine($"{ex.Message}");
+  }
+}
+
+void DisplayMainMenu()
+{
+  Console.WriteLine("\nMain Menu");
+  Console.WriteLine("D) Run Demo1 - Arrays Intro and Storm Category");
+  Console.WriteLine("E) Run Demo2 - Arrays with methods ave, min, max, sort");
+  Console.WriteLine("Q) Quit");
+}
+
+string Prompt(string prompt)
+{
+  string response = "";
+  Console.Write(prompt);
+  response = Console.ReadLine();
+  return response.ToUpper();
+}
 
 void Demo1()
 {
   try
   {
+    Console.WriteLine($"\nDemo1 - Arrays Intro and Storm Category");
     // char myChar = 'a';
     char[] myCharArray = ['c', 'd', 'e'];
     int[] myIntArray = [1, 2, 4, 7];
@@ -57,6 +93,7 @@ void Demo2()
 {
   try
   {
+    Console.WriteLine($"\nDemo2 - Arrays with methods ave, min, max, sort");
     int minSize = 0;
     int maxSize = 100;
     int size = GetIntBetweenMinMax($"Enter the number of items as an int between {minSize} and {maxSize}: ", minSize, maxSize);
@@ -122,55 +159,6 @@ void Demo2()
     for (int i = 0; i < arr.Length; i++)
       Console.Write($"{arr[i]} ");
     Console.WriteLine();
-  }
-}
-
-void Demo3()
-{
-  try
-  {
-    WithArrays();
-    WithLists();
-  }
-  catch (Exception ex)
-  {
-    Console.WriteLine($"Exception in demo3: {ex.Message}");
-  }
-
-  void WithArrays()
-  {
-    Console.WriteLine("*** Using traditional arrays where size must be statically set at declaration ***");
-    int studentCount = GetIntBetweenMinMax("How many students in your class? ", 0, 100);
-    string[] studentNames = new string[studentCount];
-    int[] studentGrades = new int[studentCount];
-    for (int i = 0; i < studentCount; i++)
-    {
-      studentNames[i] = GetString("Student Name: ");
-      studentGrades[i] = GetIntBetweenMinMax("Student Grade: ", 0, 100);
-    }
-    for (int i = 0; i < studentCount; i++)
-    {
-      Console.WriteLine($"Name: {studentNames[i]}, Grade: {studentGrades[i]}");
-    }
-  }
-
-	void WithLists()
-  {
-    Console.WriteLine("*** Using dynamic arrays called lists where size is not set at declaration ***");
-    List<string> studentNames = new List<string>();
-    List<int> studentGrades = new List<int>();
-    var adding = true;
-    while(adding)
-    {
-      studentNames.Add(GetString("Student Name: "));
-      studentGrades.Add(GetIntBetweenMinMax("Student Grade: ", 0, 100));
-      if (GetString("Add another? y/n: ") == "n")
-        adding = false;
-    }
-    for (int i = 0; i < studentNames.Count; i++)
-    {
-      Console.WriteLine($"Name: {studentNames[i]}, Grade: {studentGrades[i]}");
-    }
   }
 }
 

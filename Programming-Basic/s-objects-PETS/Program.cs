@@ -3,7 +3,7 @@ using System.Data.SqlTypes;
 using System.Collections.Generic;
 using PetsRLaw;
 
-Pet myPet = new();
+Pet myPet = new(); //this is a shorthand of : Pet myPet = new Pet();
 List<Pet> listOfPets = [];
 
 LoadFileValuesToMemory(listOfPets);

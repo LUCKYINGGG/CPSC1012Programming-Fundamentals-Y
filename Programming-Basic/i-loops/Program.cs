@@ -1,7 +1,7 @@
 ﻿// Loops Demos
 
 // Demo-1-For Loop Simple Demo
-Demo1();
+//Demo1();
 // Demo-2-For Loop: Class Average Calculator
 //Demo2();
 // Demo-3-For Loop: Total Sales Calculator
@@ -16,18 +16,21 @@ Demo1();
 //Demo7();
 // Demo-8-While Loop: Guess the Number Only Play Once
 //Demo8();
-// Demo-9-Do While Simple Demo
+// Demo-9-While vs Do While Simple Demo
 //Demo9();
 // Demo-10-Do While Loop: Class Average with High/Low Play Many Times
 //Demo10();
 // Demo-11-Do While Loop: Add Calculator Play Many Times
-//Demo11();
+Demo11();
 
 void Demo1()
 {
   //i++ is the same as i = i + 1
   for (int i = 0; i < 4; i++)
+  {
     Console.WriteLine($"{i}. I will not sleep in class.");
+    Console.WriteLine($"by the way, this is so fun");
+  }
 }
 
 void Demo2()
@@ -95,7 +98,7 @@ void Demo4()
     sumOfMarks += curMark;
   }
   // Calculate the average
-  avgMark = (double)sumOfMarks / numStudents;
+  avgMark = sumOfMarks / numStudents;
   // Print our results
   Console.WriteLine($"\nAverage Mark: {avgMark}, Highest Mark: {maxMark}, Lowest Mark: {minMark}");
 }
@@ -149,7 +152,7 @@ void Demo7()
   players = 0;
   while (players < 1)
   {
-    Console.Write("Enter Number of available players: ");
+    Console.Write("Enter Number of available players (greater than 0): ");
     players = int.Parse(Console.ReadLine());
   }
   // Calculate the number of teams using integer math.
@@ -204,8 +207,16 @@ void Demo9()
 {
   // Prompt the user to enter a series of integer numbers, 0 to stop
   // Display sum of all numbers entered.
-  int num;
+  int num = -1;
   int sum = 0;
+  while(num != 0)
+  {
+    Console.Write("Enter an integer number (0 to exit): ");
+    num = int.Parse(Console.ReadLine());
+    sum += num;
+  }
+  Console.WriteLine($"\nSum of Numbers {sum}");
+  sum = 0;
   do
   {
     Console.Write("Enter an integer number (0 to exit): ");
@@ -260,28 +271,20 @@ void Demo10()
 
 void Demo11()
 {
-  String playAgain = "y";
-  String stringEntered = "1";
-  double numEntered;
-  double total = 0;
-  Console.WriteLine($"*** Welcome to the Adding Machine. ***");
+  string playAgain;
+  double first;
+  double second;
+  double total;
   do
   {
-    Console.WriteLine($"Enter = when done.");
-    while (stringEntered != "=")
-    {
-      Console.Write($"Enter a number: ");
-      stringEntered = Console.ReadLine();
-      if (stringEntered != "=")
-      {
-        numEntered = double.Parse(stringEntered);
-        total += numEntered;
-      }
-    }
-    stringEntered = "1";
-    Console.WriteLine($"The total is {total}");
-    total = 0;
-    Console.Write($"Would you like to play again y or n? ");
+    Console.WriteLine($"*** Welcome to the Adding Machine. ***");
+    Console.Write($"Enter a first number as a double: ");
+    first = double.Parse(Console.ReadLine());
+    Console.Write($"Enter a second number as a double: ");
+    second = double.Parse(Console.ReadLine());
+    total = first + second;
+    Console.WriteLine($"The added total is {total}");
+    Console.Write($"\nWould you like to play again y or n? ");
     playAgain = Console.ReadLine();
   } while (playAgain != "n");
 }

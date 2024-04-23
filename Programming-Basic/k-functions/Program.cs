@@ -27,7 +27,7 @@ void Demo1()
   // intermediate function with input parameters but no return
   void printIt(String myString, int myInt)
   {
-    Console.WriteLine($"Hey my string is: {myString}, and my int is {myInt}");
+    Console.WriteLine($"Hey my string is: {myString}, and my int is {myInt.ToString()}");
   }
   // most complicated function with input parameters and a return value
   int add(int n1, int n2)
@@ -136,10 +136,12 @@ void Demo3()
     }
     return num;
   }
+
   double circleArea(double radius)
   {
     return (Math.PI * radius * radius);
   }
+
   double circleCircumference(double radius)
   {
     return (2 * Math.PI * radius);
@@ -167,6 +169,7 @@ void Demo4()
     double slope;
     slope = (y2 - y1) / (x2 - x1);
     return slope;
+    //return (y2 - y1) / (x2 - x1);
   }
 
   /* Calculates the Y intercept of the line. */
@@ -175,6 +178,7 @@ void Demo4()
     double intercept;
     intercept = y1 - slope * x1;
     return intercept;
+    //return y1 - slope * x1;
   }
 }
 
